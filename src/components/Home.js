@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 import Web3 from 'web3'
 import Marketplace from '../abis/Marketplace.json'
-
+//Test comment
 class Home extends Component {
     async componentWillMount() {
         await this.loadWeb3()
