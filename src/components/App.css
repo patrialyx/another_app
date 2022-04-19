@@ -1,1 +1,29 @@
 /* Styles go here */
+.bkgrd {
+    background-repeat: space;
+    background-position: center;
+    background-repeat: center;
+    background-image: url("../besttree.webp"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 700px; /* You must set a specified height */
+    background-size: cover; /*Resize the background image to cover the entire container */
+  }
+.theseWords{
+    display: "flex";
+    color: white;
+    margin-top: 200px;
+    text-align: center;
+  }
+.orientation{
+  display: flex;
+  flex-direction: row;
+  margin-left: -40px;
+}
+.formcss{
+  color: white;
+}
+
+.belowWords{
+  color:white;
+  text-align: center;
+}

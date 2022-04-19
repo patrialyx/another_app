@@ -1,49 +1,45 @@
-import React, { Component } from 'react';
-import logo from '../logo.png';
-import './App.css';
-
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import Home from './Home';
+import Donor from './Donor'
+import Profile from './Profile'
+import Org from './Org'
+import Login from './Login'
+import Signup from '../backend/Signup';
+import { AuthProvider } from '../contexts/AuthContext';
+import ForgotPassword from './ForgotPassword';
 class App extends Component {
   render() {
     return (
-      <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dapp University
-          </a>
-        </nav>
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={logo} className="App-logo" alt="logo" />
-                </a>
-                <h1>Dapp University Starter Kit</h1>
-                <p>
-                  Edit <code>src/components/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LEARN BLOCKCHAIN <u><b>NOW! </b></u>
-                </a>
-              </div>
-            </main>
+      <AuthProvider>
+      <Router>
+        <div className="bkgrd">
+          <div className="container-fluid mt-5">
+            <div className="row">
+              <main role="main" className="col-lg-12 d-flex text-center">
+                <div className="content mr-auto ml-auto">  
+                <div className="theseWords">
+                  <h1>TRAZIBLE</h1>
+                  <p>Transparent, trustworthy, traceable.</p>
+                </div>
+          
+                  <Routes>
+                    <Route exact path ='/' element={<Home/>}/>
+                    <Route path='/donor' element={<Donor/>}/>
+                    <Route path='/profile' element={<Profile/>}/>
+                    <Route path='/org' element={<Org/>}/>
+                    <Route path='/login' element={<Login/>}/>
+                    <Route path='/signup' element={<Signup/>}/>
+                    <Route path='/forgot-password' element={<ForgotPassword/>}/>
+                  </Routes>
+            
+                </div>
+              </main>
+            </div>
           </div>
         </div>
-      </div>
+      </Router>
+      </AuthProvider>
     );
   }
 }
