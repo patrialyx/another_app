@@ -17,8 +17,7 @@ contract Marketplace {
         uint id; // number is alw positive
         string name;
         uint price;
-        string description; // added description about an item
-        address payable owner; // person who owns the product at first (seller)
+        address payable owner;// person who owns the product at first (seller)
         bool purchased;
     }
     // check the logs by triggering events
@@ -26,7 +25,6 @@ contract Marketplace {
         uint id,
         string name,
         uint price,
-        string description,
         address payable owner,
         bool purchased
     );
@@ -35,7 +33,6 @@ contract Marketplace {
         uint id,
         string name,
         uint price,
-        string description,
         address payable owner,
         bool purchased
     );
@@ -56,9 +53,9 @@ contract Marketplace {
         // create product
         // sender = person who called the function, msg is a global variable in solidity
         // eth add
-        products[productCount] = Product(productCount, _name, _price, 'Donation to X', msg.sender, false);
+        products[productCount] = Product(productCount, _name, _price, msg.sender, false);
         // trigger event
-        emit ProductCreated(productCount, _name, _price, 'Donation to X', msg.sender, false);
+        emit ProductCreated(productCount, _name, _price, msg.sender, false);
     }
 
     // ether wont allow function to send payment unless there is payable modifier
@@ -86,7 +83,7 @@ contract Marketplace {
         address(_seller).transfer(msg.value); 
 
         // trigger an event
-        emit ProductPurchased(productCount, _product.name, _product.price, 'Donation to X', msg.sender, true);
+        emit ProductPurchased(productCount, _product.name, _product.price, msg.sender, true);
 
     }
 }

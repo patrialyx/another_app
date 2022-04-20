@@ -8,6 +8,7 @@ import Login from './Login'
 import Signup from '../backend/Signup';
 import { AuthProvider } from '../contexts/AuthContext';
 import ForgotPassword from './ForgotPassword';
+import Buy from './Buy'
 class App extends Component {
   render() {
     return (
@@ -28,9 +29,7 @@ class App extends Component {
                     <Route path='/donor' element={<Donor/>}/>
                     <Route path='/profile' element={<Profile/>}/>
                     <Route path='/org' element={<Org/>}/>
-                    <Route path='/login' element={<Login/>}/>
-                    <Route path='/signup' element={<Signup/>}/>
-                    <Route path='/forgot-password' element={<ForgotPassword/>}/>
+                    <Route path='/buy' element={<Buy/>}/>
                   </Routes>
             
                 </div>
