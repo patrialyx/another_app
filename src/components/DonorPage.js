@@ -4,31 +4,24 @@ import Navbar from './Navbar_donor'
 import Card from "react-bootstrap/Card";
 import BaldCypress from "../bald-cypress.jpg"
 import './DonorLogic.css';
-import Org from './Org'
+
+import Web3 from 'web3'
+import Marketplace from '../abis/Marketplace.json'
+
+import {Link, useHistory} from "react-router-dom"
+
 
 
 
 class DonorPage extends Component {
-    constructor(props){
-      super(props)
-      this.state = {
-        account: '',
-        productCount: 0,
-        products: [],
-        loading: true
-      }
-    }
 
-    
-  
 
     render() {
-      const products = this.state.products;
       return (
       <div>
         <div class="flexbox-container" id="content">
         <div class="row mt-5 mb-5 ml-5 mr-10">
-        {products.map((product, key) => {
+        {this.props.products.map((product, key) => {
           return (
           <Card style={{ width: '20rem' }} key={key}>
             <Card.Img variant="top" src={BaldCypress} />
@@ -53,10 +46,11 @@ class DonorPage extends Component {
         )
          
        </div>
+       
        </div>
      )
+     
    }
  }
-
 
 export default DonorPage;

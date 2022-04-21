@@ -5,6 +5,8 @@ import Donorlogic from './DonorLogic'
 import Donorpage from './DonorPage'
 import Profile from './Profile'
 import Org from './Org'
+import OrgInput from './OrgInput'
+
 
 
 import { AuthProvider } from '../contexts/AuthContext';
@@ -31,6 +33,7 @@ class App extends Component {
                     <Route path='/donorpage' element={<Donorpage/>}/>
                     <Route path='/profile' element={<Profile/>}/>
                     <Route path='/org' element={<Org/>}/>
+                    <Route path='/orginput' element={<OrgInput/>}/>
                     <Route path='/buy' element={<Buy/>}/>
                   </Routes>
             

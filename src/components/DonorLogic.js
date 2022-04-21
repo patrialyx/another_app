@@ -4,15 +4,17 @@ import Navbar from './Navbar_donor'
 import Card from "react-bootstrap/Card";
 import BaldCypress from "../bald-cypress.jpg"
 import './DonorLogic.css';
+import DonorPage from './DonorPage'
+import Web3 from 'web3'
+import Marketplace from '../abis/Marketplace.json'
+
+import {Link, useHistory} from "react-router-dom"
+
 
 
 
 class DonorLogic extends Component {
-    constructor(props) {
-      super(props)
-    }
   
-
     render() {
       return (
       <div>
@@ -45,6 +47,7 @@ class DonorLogic extends Component {
        </div>
        </div>
      )
+     
    }
  }
 

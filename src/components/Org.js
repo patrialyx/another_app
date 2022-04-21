@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import React, { Component } from 'react';
+import React, { Component, useState} from 'react';
 import Web3 from 'web3'
 import Marketplace from '../abis/Marketplace.json'
 import Navbar from './Navbar_org'
@@ -79,61 +79,18 @@ class Org extends Component {
         this.setState({loading: false})
       })
     }
-
-   
   
+    
+
     render() {
+      
       return (
         <div>
           <Navbar account={this.state.account}/>
-          <div className="container-fluid mt-5">
-            <div className="row">
-              <main role="main" className="col-lg-12 d-flex text-center">
-                <div className="content mr-auto ml-auto">             
-                <div id="content">
-                  <h1>Add Project</h1>
-                  <form onSubmit={(event) => {
-                    event.preventDefault()
-                    const name = this.productName.value
-                    const price = window.web3.utils.toWei(this.productPrice.value.toString(), 'Ether')
-                    this.createProduct(name, price)   
-                    
-                  }}>
-                  
-
-                    <div className="form-group mr-sm-2">
-                      <input
-                        id="TreeName"
-                        type="text"
-                        ref={(input) => { this.productName = input }}
-                        className="form-control"
-                        placeholder="Project Name"
-                        required />
-                    </div>
-                    <div className="form-group mr-sm-2">
-                      <input
-                        id="TreePrice"
-                        type="text"
-                        ref={(input) => { this.productPrice = input }}
-                        className="form-control"
-                        placeholder="Donation Amount"
-                        required />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Upload</button>
-                  </form>
-                </div>  
-              </div>
-            </main>
-          </div>
-        </div>
         <DonorLogic
           products={this.state.products}
           createProduct={this.createProduct}
         />
-        <DonorPage 
-          products = {this.state.products}
-        />
-        
         
       </div>
     );
