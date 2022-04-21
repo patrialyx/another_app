@@ -59,7 +59,7 @@ class Home extends Component {
                 </div>
                 <div className="orientation">
                     <ul>
-                        <a href="http://localhost:3000/donor" class="btn btn-info" role="button">
+                        <a href="http://localhost:3000/donorlogic" class="btn btn-info" role="button">
                             I want to plant a tree
                         </a>
                     </ul>

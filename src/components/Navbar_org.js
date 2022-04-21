@@ -6,14 +6,15 @@ class Navbar_org extends Component {
   render() {
     return (
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-10 col-md-1 mr-0"
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Trazible
-          </a>
+          <ul className="navbar-nav px-3">
+            <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
+              <large className="text-white">
+                <span id="account">
+                <Link to={'/'} className="nav-link">Trazible</Link>
+                </span>
+              </large>
+            </li>
+          </ul>
         
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">

@@ -1,11 +1,12 @@
 .flexbox-container {
     display: flex;
-    flex-direction: row;
+    margin: 15;
+    flex-direction: col;
     background-repeat: space;
     background-position: center;
     background-repeat: center;
     background-image: url("../besttree.webp"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
-    height: 500px; /* You must set a specified height */
+    height: 500; /* You must set a specified height */
     background-size: cover; /*Resize the background image to cover the entire container */
 }

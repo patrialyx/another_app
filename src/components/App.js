@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Home from './Home';
-import Donor from './Donor'
+import Donorlogic from './DonorLogic'
+import Donorpage from './DonorPage'
 import Profile from './Profile'
 import Org from './Org'
-import Login from './Login'
-import Signup from '../backend/Signup';
+
+
 import { AuthProvider } from '../contexts/AuthContext';
-import ForgotPassword from './ForgotPassword';
+
 import Buy from './Buy'
 class App extends Component {
   render() {
@@ -26,7 +27,8 @@ class App extends Component {
           
                   <Routes>
                     <Route exact path ='/' element={<Home/>}/>
-                    <Route path='/donor' element={<Donor/>}/>
+                    <Route path='/donorlogic' element={<Donorlogic/>}/>
+                    <Route path='/donorpage' element={<Donorpage/>}/>
                     <Route path='/profile' element={<Profile/>}/>
                     <Route path='/org' element={<Org/>}/>
                     <Route path='/buy' element={<Buy/>}/>

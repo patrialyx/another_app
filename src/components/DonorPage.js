@@ -4,21 +4,31 @@ import Navbar from './Navbar_donor'
 import Card from "react-bootstrap/Card";
 import BaldCypress from "../bald-cypress.jpg"
 import './DonorLogic.css';
+import Org from './Org'
 
 
 
-class DonorLogic extends Component {
-    constructor(props) {
+class DonorPage extends Component {
+    constructor(props){
       super(props)
+      this.state = {
+        account: '',
+        productCount: 0,
+        products: [],
+        loading: true
+      }
     }
+
+    
   
 
     render() {
+      const products = this.state.products;
       return (
       <div>
         <div class="flexbox-container" id="content">
         <div class="row mt-5 mb-5 ml-5 mr-10">
-        {this.props.products.map((product, key) => {
+        {products.map((product, key) => {
           return (
           <Card style={{ width: '20rem' }} key={key}>
             <Card.Img variant="top" src={BaldCypress} />
@@ -48,4 +58,5 @@ class DonorLogic extends Component {
    }
  }
 
-export default DonorLogic;
+
+export default DonorPage;

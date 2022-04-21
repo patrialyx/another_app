@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 import Web3 from 'web3'
 import Marketplace from '../abis/Marketplace.json'
 import Navbar from './Navbar_org'
-import OrgLogic from './OrgLogic';
 import {Link, useHistory} from "react-router-dom"
 import DonorLogic from './DonorLogic'
+import DonorPage from './DonorPage'
 
 class Org extends Component {
     
@@ -79,7 +79,8 @@ class Org extends Component {
         this.setState({loading: false})
       })
     }
-    
+
+   
   
     render() {
       return (
@@ -89,28 +90,55 @@ class Org extends Component {
             <div className="row">
               <main role="main" className="col-lg-12 d-flex text-center">
                 <div className="content mr-auto ml-auto">             
-                    {this.state.loading 
-                    ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
-                    : <OrgLogic
-                      products={this.state.products}
-                      createProduct={this.createProduct} />
-                    }
-                    <DonorLogic
-                    products={this.state.products}
-                      createProduct={this.createProduct} />
+                <div id="content">
+                  <h1>Add Project</h1>
+                  <form onSubmit={(event) => {
+                    event.preventDefault()
+                    const name = this.productName.value
+                    const price = window.web3.utils.toWei(this.productPrice.value.toString(), 'Ether')
+                    this.createProduct(name, price)   
                     
-                </div>
-              </main>
-            </div>
+                  }}>
+                  
+
+                    <div className="form-group mr-sm-2">
+                      <input
+                        id="TreeName"
+                        type="text"
+                        ref={(input) => { this.productName = input }}
+                        className="form-control"
+                        placeholder="Project Name"
+                        required />
+                    </div>
+                    <div className="form-group mr-sm-2">
+                      <input
+                        id="TreePrice"
+                        type="text"
+                        ref={(input) => { this.productPrice = input }}
+                        className="form-control"
+                        placeholder="Donation Amount"
+                        required />
+                    </div>
+                    <button type="submit" className="btn btn-primary">Upload</button>
+                  </form>
+                </div>  
+              </div>
+            </main>
           </div>
-          <Link to={{
-            pathname: "/donor",
-            data: <OrgLogic products/>
-          }}
-          ></Link>
         </div>
-      );
-    }
+        <DonorLogic
+          products={this.state.products}
+          createProduct={this.createProduct}
+        />
+        <DonorPage 
+          products = {this.state.products}
+        />
+        
+        
+      </div>
+    );
+  }
+    
     
 }
 
