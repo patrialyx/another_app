@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Home from './Home';
-import Donorlogic from './DonorLogic'
-import Donorpage from './DonorPage'
 import Profile from './Profile'
 import Org from './Org'
-import OrgInput from './OrgInput'
+import Donor from './Donor'
 
 
 
@@ -29,11 +27,9 @@ class App extends Component {
           
                   <Routes>
                     <Route exact path ='/' element={<Home/>}/>
-                    <Route path='/donorlogic' element={<Donorlogic/>}/>
-                    <Route path='/donorpage' element={<Donorpage/>}/>
                     <Route path='/profile' element={<Profile/>}/>
                     <Route path='/org' element={<Org/>}/>
-                    <Route path='/orginput' element={<OrgInput/>}/>
+                    <Route path='/donor' element={<Donor/>}/>
                     <Route path='/buy' element={<Buy/>}/>
                   </Routes>
             

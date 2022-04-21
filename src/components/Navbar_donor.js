@@ -10,7 +10,7 @@ class Navbar_donor extends Component {
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
               <medium className="text-white">
                 <span id="account">
-                <Link to={'/'} className="nav-link">Plant a Seed</Link>
+                <Link to={'/'} className="nav-link">Trazible</Link>
                 </span>
               </medium>
             </li>
@@ -20,7 +20,7 @@ class Navbar_donor extends Component {
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
               <medium className="text-white">
                 <span id="account">
-                <Link to={'/donorlogic'} className="nav-link">Plant a Seed</Link>
+                <Link to={'/donor'} className="nav-link">Plant a Seed</Link>
                 </span>
               </medium>
             </li>

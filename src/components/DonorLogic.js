@@ -4,7 +4,7 @@ import Navbar from './Navbar_donor'
 import Card from "react-bootstrap/Card";
 import BaldCypress from "../bald-cypress.jpg"
 import './DonorLogic.css';
-import DonorPage from './DonorPage'
+
 import Web3 from 'web3'
 import Marketplace from '../abis/Marketplace.json'
 
@@ -27,14 +27,22 @@ class DonorLogic extends Component {
             <Card.Body>
               <Card.Title>{product.name}</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+              A large, deciduous tree growing up to 20–40m tall. Also known as common oak, this species grows and matures to form a broad and spreading crown with sturdy branches beneath.
                 <p>&nbsp;</p>
-                {product.price.toString()}
+                Donate: {window.web3.utils.fromWei(product.price.toString(), 'Ether')} dollar
+                <p>&nbsp;</p>
+                Owner: {product.owner}
               </Card.Text>
-              <a href="http://localhost:3000/buy" class="btn btn-primary" role="button">
-                  Plant
-              </a>
+              <button 
+              name={product.id}
+              value={product.price}
+                onClick={(event)=>{
+                  console.log("clicked..")
+                  this.props.purchaseProduct(event.target.name, event.target.value)
+                }}
+              >
+                Plant
+              </button>
             </Card.Body>
           </Card>
           )
