@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar_donor'
 
 import Card from "react-bootstrap/Card";
-import BaldCypress from "../bald-cypress.jpg"
+import LiveOak from "../live-oak.jpg"
 import './DonorLogic.css';
 
 import Web3 from 'web3'
@@ -23,7 +23,7 @@ class DonorLogic extends Component {
         {this.props.products.map((product, key) => {
           return (
           <Card style={{ width: '20rem' }} key={key}>
-            <Card.Img variant="top" src={BaldCypress} />
+            <Card.Img variant="top" src={LiveOak} />
             <Card.Body>
               <Card.Title>{product.name}</Card.Title>
               <Card.Text>
