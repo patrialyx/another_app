@@ -1,5 +1,5 @@
-**Features and capabilities**
-Donor User Interface
+**Features and capabilities** <br>
+Donor User Interface <br>
 1 Home Page
 - Landing page for users and donors
 2 Plant a Seed Page
@@ -32,8 +32,8 @@ Organization User Interface<br>
 - The beneficiary must be able to submit the form.
 - The form will contain the description of the project to be listed.
 
-**Architecture**
-Frontend - React.js
+**Architecture** <br>
+Frontend - React.js <br>
 Backend - Ethereum blockchain, IPFS for file storage
 
 **How to run application**
