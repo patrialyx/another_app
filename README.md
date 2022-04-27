@@ -1,4 +1,4 @@
-** Features and capabilities **
+**Features and capabilities**
 Donor User Interface
 1 Home Page
 - Landing page for users and donors
@@ -21,24 +21,23 @@ Users must be able to submit the form.
 - Password must be hidden
 - Users must be prompted that their username or password is invalid when either doesn’t match the data about their account 
 
-Backend
-1 Transaction
+Backend<br>
+1 Transaction<br>
 - User transactions must be recorded on the Ethereum blockchain.
 - Transaction struct must include a pointer to IPFS where the data relating to the project is stored
 
-Organization User Interface
-1 Home Page
+Organization User Interface<br>
+1 Home Page<br>
 - The beneficiary must be able to click on ‘I want to list a project’ to be able to access a form.
 - The beneficiary must be able to submit the form.
 - The form will contain the description of the project to be listed.
 
-** Architecture **
+**Architecture**
 Frontend - React.js
 Backend - Ethereum blockchain, IPFS for file storage
 
-** How to run application **
+**How to run application**
 - run `npm install`
 - run `npm start`
-
 
 
