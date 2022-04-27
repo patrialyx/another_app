@@ -37,7 +37,7 @@ Frontend - React.js <br>
 Backend - Ethereum blockchain, IPFS for file storage
 
 **How to run application**
-- run `npm install`
-- run `npm start`
+- `npm install`
+- `npm start`
 
 
