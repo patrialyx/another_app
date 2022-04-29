@@ -37,6 +37,7 @@ Frontend - React.js <br>
 Backend - Ethereum blockchain, IPFS for file storage
 
 **How to run application**
+- `truffle migrate`
 - `npm install`
 - `npm start`
 
